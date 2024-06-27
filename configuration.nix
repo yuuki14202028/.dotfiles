@@ -137,9 +137,8 @@
       enable = true;
     };
 
-    chromium = {
+    brave = {
       enable = true;
-      package = pkgs.brave;
     };
 
   };
