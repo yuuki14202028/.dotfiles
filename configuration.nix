@@ -42,11 +42,6 @@
     LC_TIME = "ja_JP.UTF-8";
   };
 
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = [pkgs.fcitx5-mozc];
-  };
-
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
@@ -63,6 +58,7 @@
 
   # Configure console keymap
   console.keyMap = "jp106";
+  console.earlySetup _ true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -81,6 +77,11 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+  };
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = [pkgs.fcitx5-mozc];
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
