@@ -128,7 +128,7 @@
 
   services.xremap = {
     userName = "yuuki";
-    serviceMode = "system";
+    serviceMode = "user";
     config = {
     };
   };
