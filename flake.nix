@@ -18,7 +18,7 @@
         ];
 	specialArgs = {
 	  inherit inputs;
-	}
+	};
       };
     };
     homeConfigurations = {
