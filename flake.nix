@@ -32,6 +32,7 @@
 	modules = [
 	  ./home.nix
 	  ./browser.nix
+	  ./apps.nix
 	];
       };
     };
