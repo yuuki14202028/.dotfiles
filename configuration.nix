@@ -98,13 +98,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.shells = [pkgs.zsh];
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    neovim
-    wget
-    git
-    zsh
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -113,6 +106,29 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  programs = {
+
+    git = {
+      enable = true;
+    };
+
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+    };
+
+    starship = {
+      enable = true;
+    };
+
+    zsh = {
+      enable = true;
+    };
+
+  };
 
   # List services that you want to enable:
 
