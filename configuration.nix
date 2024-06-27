@@ -42,6 +42,11 @@
     LC_TIME = "ja_JP.UTF-8";
   };
 
+  i18n.inputMethod = {
+    enable = "fcitx5";
+    fcitx5.addons = [pkgs.fcitx5-mozc];
+  };
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
@@ -90,6 +95,7 @@
       kdePackages.kate
     #  thunderbird
     ];
+    shell = pkgs.zsh;
   };
 
   # Install firefox.
@@ -97,7 +103,6 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.shells = [pkgs.zsh];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -128,6 +133,24 @@
       enable = true;
     };
 
+  };
+
+  fonts = {
+    fonts = with pkgs; [
+      noto-fonts-cjk-serif
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      nerdfonts
+    ];
+    fontDir.enable = true;
+    fontconfig = {
+      defaultFonts = {
+        serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
+	sanSerif = ["Noto Sans CJK JP" "Noto Color Emoji"];
+	monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
+	emoji = ["Noto Color Emoji"];
+      };
+    };
   };
 
   # List services that you want to enable:
