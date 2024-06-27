@@ -133,10 +133,6 @@ e
       enable = true;
     };
 
-    brave = {
-      enable = true;
-    };
-
   };
 
   fonts = {

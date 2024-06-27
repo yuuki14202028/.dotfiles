@@ -27,6 +27,7 @@
 	};
 	modules = [
 	  ./home.nix
+	  ./browser.nix
 	];
       };
     };
