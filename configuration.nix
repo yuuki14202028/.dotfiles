@@ -133,11 +133,6 @@
       enable = true;
     };
 
-    chromium = {
-      enable = true;
-      package = pkgs.brave;
-    };
-
   };
 
   fonts = {
