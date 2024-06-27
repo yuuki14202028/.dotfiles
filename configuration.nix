@@ -12,11 +12,7 @@
 
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-gpu-nvidia
-    ])
-
-    ++ [
-      inputs.xremap.nixosModules.default
-    ];
+    ]);
 
   nixpkgs.config.allowUnfree = true;
 
@@ -127,13 +123,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  services.xremap = {
-    userName = "yuuki";
-    serviceMode = "user";
-    config = {
-    };
-  };
 
   programs = {
 
