@@ -126,6 +126,13 @@
   #   enableSSHSupport = true;
   # };
 
+  services.xremap = {
+    userName = "yuuki";
+    serviceMode = "system";
+    config = {
+    };
+  };
+
   programs = {
 
     git = {
