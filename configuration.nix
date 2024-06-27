@@ -18,6 +18,8 @@
       inputs.xremap.nixosModules.default
     ];
 
+  nixpkgs.config.allowUnfree = true;
+
   hardware.nvidia.prime = {
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:14:0:0";
