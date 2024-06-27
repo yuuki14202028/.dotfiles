@@ -58,7 +58,7 @@
 
   # Configure console keymap
   console.keyMap = "jp106";
-  console.earlySetup _ true;
+  console.earlySetup = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
