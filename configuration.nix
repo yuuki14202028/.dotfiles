@@ -8,17 +8,21 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-    ]
-
-    ++ (with inputs.nixos-hardware.nixosModules; [
-      common-gpu-nvidia
-    ]);
+    ];
 
   nixpkgs.config.allowUnfree = true;
 
-  hardware.nvidia.prime = {
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:14:0:0";
+  hardware = {
+    opengl = {
+      enable = true;
+    };
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      open = false;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
   };
 
   # Bootloader.
@@ -65,6 +69,7 @@
   services.xserver = {
     layout = "jp";
     xkbVariant = "";
+    videoDrivers = ["nvidia"];
   };
 
   # Configure console keymap
