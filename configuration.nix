@@ -43,7 +43,7 @@
   };
 
   i18n.inputMethod = {
-    enable = "fcitx5";
+    enabled = "fcitx5";
     fcitx5.addons = [pkgs.fcitx5-mozc];
   };
 
