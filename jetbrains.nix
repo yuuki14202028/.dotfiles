@@ -8,6 +8,6 @@
   patched-idea = with pkgs; (jetbrains.plugins.addPlugins jetbrains.idea-ultimate plugins);
 in {
   home.packages = with pkgs; [
-    patched-idea
-  ];
+    android-studio
+  ] ++ [patched-idea];
 }
