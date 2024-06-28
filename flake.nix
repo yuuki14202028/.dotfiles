@@ -33,6 +33,7 @@
 	  ./home.nix
 	  ./browser.nix
 	  ./apps.nix
+	  ./jetbrains.nix
 	];
       };
     };
