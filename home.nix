@@ -1,4 +1,9 @@
 {
+  imports = [
+    ./apps.nix
+    ./browser.nix
+    ./jetbrains.nix
+  ];
   home = rec {
     username="yuuki";
     homeDirectory = "/home/${username}";

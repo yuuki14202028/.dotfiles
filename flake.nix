@@ -18,28 +18,12 @@
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
+	    home-manager.users.yuuki = import ./home.nix;
 	  }
         ];
 	specialArgs = {
 	  inherit inputs;
 	};
-      };
-    };
-    homeConfigurations = {
-      myHome = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = import inputs.nixpkgs {
-	  system = "x86_64-linux";
-	  config.allowUnfree = true;
-	};
-	extraSpecialArgs = {
-	  inherit inputs;
-	};
-	modules = [
-	  ./home.nix
-	  ./browser.nix
-	  ./apps.nix
-	  ./jetbrains.nix
-	];
       };
     };
   };
