@@ -2,15 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
-
-{
+{ inputs, config, pkgs, lib, ... }:
+let
+  spicetify-nix = inputs.spicetify-nix;
+  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      spicetify-nix.nixosModule
     ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "spotify"
+  ];
 
   hardware = {
     opengl = {
@@ -148,6 +154,17 @@
 
     zsh = {
       enable = true;
+    };
+
+    spicetify = {
+      enable = true;
+      theme = spicePkgs.themes.catppuccin;
+      colorScheme = "mocha";
+
+      enabledExtensions = with spicePkgs.extensions; [
+        fullAppDisplay
+	hidePodcasts
+      ];
     };
 
   };

@@ -3,7 +3,6 @@
     ./apps.nix
     ./browser.nix
     ./jetbrains.nix
-    ./spicetify.nix
   ];
   home = rec {
     username="yuuki";
