@@ -162,8 +162,10 @@ in {
       colorScheme = "mocha";
 
       enabledExtensions = with spicePkgs.extensions; [
-        fullAppDisplay
+        popupLyrics
+	history
 	hidePodcasts
+	adblock
       ];
     };
 
