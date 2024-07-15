@@ -6,6 +6,5 @@
     discord
     discord-ptb
     slack
-    spotify
   ];
 }
