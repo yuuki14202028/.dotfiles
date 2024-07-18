@@ -31,9 +31,15 @@ in {
     };
   };
 
+  zramSwap = {
+    enable = true;
+    memoryPercent = 200;
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -154,6 +160,7 @@ in {
 
     zsh = {
       enable = true;
+      syntaxHighlighting.enable = true;
     };
 
     spicetify = {
