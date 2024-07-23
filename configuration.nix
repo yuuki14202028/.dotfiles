@@ -112,6 +112,12 @@ in {
     fcitx5.addons = [pkgs.fcitx5-mozc];
   };
 
+
+  environment.systemPackages = with pkgs; [
+    gnupg
+    nodejs
+  ];
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -142,6 +148,13 @@ in {
   # };
 
   programs = {
+
+    direnv = {
+      enable = true;
+      nix-direnv = {
+        enable = true;
+      };
+    };
 
     git = {
       enable = true;
