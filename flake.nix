@@ -45,6 +45,9 @@
           export PRISMA_QUERY_ENGINE_LIBRARY="${prisma-engines}/lib/libquery_engine.node"
           export PRISMA_FMT_BINARY="${prisma-engines}/bin/prisma-fmt"
         '';
+	packages = [
+	  (pkgs.writeScriptBin "nrs" "sudo nixos-rebuild switch --flake .#myNixOS")	
+	];
       };
     });
 }
