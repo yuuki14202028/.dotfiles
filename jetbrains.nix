@@ -3,7 +3,8 @@
   plugins = [
     "ideavim"
     "nixidea"
-    "github-copilot"
+    "csv-editor"
+    "acejump"
   ];
   patched-idea = with pkgs; (jetbrains.plugins.addPlugins jetbrains.idea-ultimate plugins);
   requiredLibPath = with pkgs; lib.makeLibraryPath [
@@ -34,8 +35,11 @@
       --prefix LD_LIBRARY_PATH : ${requiredLibPath}
     '';
   };
+  ides = with pkgs.jetbrains; [
+    webstorm
+  ];
 in {
   home.packages = with pkgs; [
     android-studio
-  ] ++ [idea];
+  ] ++ (map (ide: (jetbrains.plugins.addPlugins ide plugins)) ides) ++ [idea];
 }
