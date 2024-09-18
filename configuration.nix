@@ -11,7 +11,7 @@
   nixpkgs.config.allowUnfree = true;
 
   hardware = {
-    opengl = {
+    graphics = {
       enable = true;
     };
     nvidia = {
@@ -71,8 +71,10 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "jp";
-    xkbVariant = "";
+    xkb = {
+      layout = "jp";
+      variant = "";
+    };
     videoDrivers = ["nvidia"];
   };
 
@@ -100,7 +102,8 @@
   };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
+    enable = true;
+    type = "fcitx5";
     fcitx5.addons = [pkgs.fcitx5-mozc];
   };
 
@@ -182,7 +185,7 @@
   };
 
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-emoji
@@ -216,7 +219,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.06"; # Did you read the comment?
   nix = {
     settings = {
       experimental-features = ["nix-command" "flakes"];
