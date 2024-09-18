@@ -111,6 +111,14 @@
   environment.systemPackages = with pkgs; [
     gnupg
     nodejs
+
+    eza
+    fd
+    gat
+    genact
+    ripgrep
+
+
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
