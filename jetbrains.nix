@@ -10,6 +10,8 @@
   requiredLibPath = with pkgs; lib.makeLibraryPath [
     libGL
     udev
+    flite
+    alsa-lib
   ];
   idea = pkgs.symlinkJoin {
     name = "idea-ultimate-wrapped";
