@@ -6,11 +6,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-ld.url = "github:Mic92/nix-ld";
     flake-utils.url = "github:numtide/flake-utils";
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
   };
 
-  outputs = inputs@{nixpkgs, home-manager, flake-utils, spicetify-nix, ...}: {
+  outputs = inputs@{nixpkgs, home-manager, flake-utils, nix-ld, ...}: {
     nixosConfigurations = {
       myNixOS = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -21,8 +21,9 @@
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.yuuki = import ./home.nix;
-	    home-manager.backupFileExtension = "backup";
+	    home-manager.backupFileExtension = "hm-backup";
 	  }
+	  nix-ld.nixosModules.nix-ld
         ];
 	specialArgs = {
 	  inherit inputs;
