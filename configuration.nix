@@ -11,9 +11,11 @@
   nixpkgs.config.allowUnfree = true;
 
   hardware = {
+
     graphics = {
       enable = true;
     };
+
     nvidia = {
       modesetting.enable = true;
       powerManagement.enable = false;
@@ -21,6 +23,11 @@
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
+
+    logitech = {
+      wireless.enable = true;
+    };
+
   };
 
   zramSwap = {
@@ -118,6 +125,7 @@
     genact
     ripgrep
 
+    solaar
 
   ];
 
