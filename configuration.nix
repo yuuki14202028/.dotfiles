@@ -116,6 +116,7 @@
 
 
   environment.systemPackages = with pkgs; [
+    gnumake
     gnupg
     nodejs
 
