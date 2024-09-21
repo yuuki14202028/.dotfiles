@@ -128,6 +128,10 @@
 
     solaar
 
+    jd-gui
+    dex2jar
+    apktool
+
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
