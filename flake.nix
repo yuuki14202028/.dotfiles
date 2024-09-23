@@ -8,6 +8,8 @@
     };
     nix-ld.url = "github:Mic92/nix-ld";
     flake-utils.url = "github:numtide/flake-utils";
+    plugin-onedark.url = "github:navarasu/onedark.nvim";
+    plugin-onedark.flake = false;
   };
 
   outputs = inputs@{nixpkgs, home-manager, flake-utils, nix-ld, ...}: {
@@ -21,7 +23,10 @@
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.yuuki = import ./home.nix;
-	    home-manager.backupFileExtension = "hm-backup";
+            home-manager.backupFileExtension = "hm-backup";
+            home-manager.extraSpecialArgs = { 
+              inherit inputs;
+            };
 	  }
 	  nix-ld.nixosModules.nix-ld
         ];
