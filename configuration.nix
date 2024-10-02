@@ -132,6 +132,9 @@
     dex2jar
     apktool
 
+    wineWowPackages.stable
+
+
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
