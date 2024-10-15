@@ -134,6 +134,10 @@
 
     wineWowPackages.stable
 
+    hypnotix
+
+    prismlauncher
+
 
   ];
 
