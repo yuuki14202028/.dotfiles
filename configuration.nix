@@ -136,6 +136,7 @@
 
     hypnotix
 
+    jdk
     prismlauncher
 
 
