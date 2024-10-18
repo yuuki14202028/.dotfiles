@@ -116,8 +116,11 @@
 
 
   environment.systemPackages = with pkgs; [
+
+    pinentry-qt
+
     gnumake
-    gnupg
+
     nodejs
 
     eza
@@ -138,7 +141,6 @@
 
     jdk
     prismlauncher
-
 
   ];
 
@@ -208,6 +210,11 @@
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
+    };
+
+    gnupg.agent = {
+      enable = true;
+      pinentryPackage = pkgs.pinentry-qt;
     };
 
   };
