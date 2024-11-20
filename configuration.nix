@@ -19,7 +19,7 @@
     nvidia = {
       modesetting.enable = true;
       powerManagement.enable = false;
-      open = false;
+      open = true;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
@@ -115,6 +115,7 @@
   };
 
 
+
   environment.systemPackages = with pkgs; [
 
     pinentry-qt
@@ -131,7 +132,6 @@
 
     solaar
 
-    jd-gui
     dex2jar
     apktool
 
@@ -141,6 +141,8 @@
 
     jdk
     prismlauncher
+
+    glib
 
   ];
 

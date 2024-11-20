@@ -1,4 +1,5 @@
 {
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -23,8 +24,8 @@
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.yuuki = import ./home.nix;
-            home-manager.backupFileExtension = "b";
-            home-manager.extraSpecialArgs = { 
+            home-manager.backupFileExtension = "hm-backup";
+            home-manager.extraSpecialArgs = {
               inherit inputs;
             };
 	  }
@@ -36,7 +37,9 @@
       };
     };
   } // flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs { inherit system; };
+    pkgs = import nixpkgs { 
+      inherit system;
+    };
     in {
       devShell = pkgs.mkShell {
         nativeBuildInputs = [ pkgs.bashInteractive ];
