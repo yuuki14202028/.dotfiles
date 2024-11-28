@@ -153,6 +153,8 @@
 
     glib
 
+    openssl
+
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
