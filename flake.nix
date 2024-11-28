@@ -24,7 +24,7 @@
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.yuuki = import ./home.nix;
-            home-manager.backupFileExtension = "hm-backup";
+            home-manager.backupFileExtension = "bu";
             home-manager.extraSpecialArgs = {
               inherit inputs;
             };

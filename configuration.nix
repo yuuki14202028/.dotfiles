@@ -237,7 +237,7 @@
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      nerdfonts
+      nerd-fonts.hack
       migu
     ];
     fontDir.enable = true;
