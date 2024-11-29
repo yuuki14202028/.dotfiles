@@ -46,13 +46,16 @@
         buildInputs = with pkgs; [
           nodePackages.prisma
 	  nodePackages.npm
-	  nodejs-slim
+          nodejs-slim
+          fortune
         ];
         shellHook = with pkgs; ''
+          export DIRENV_LOG_FORMAT=""
           export PRISMA_SCHEMA_ENGINE_BINARY="${prisma-engines}/bin/schema-engine"
           export PRISMA_QUERY_ENGINE_BINARY="${prisma-engines}/bin/query-engine"
           export PRISMA_QUERY_ENGINE_LIBRARY="${prisma-engines}/lib/libquery_engine.node"
           export PRISMA_FMT_BINARY="${prisma-engines}/bin/prisma-fmt"
+          fortune
         '';
 	packages = [
 	  (pkgs.writeScriptBin "nrs" "sudo nixos-rebuild switch --flake .#myNixOS")	
