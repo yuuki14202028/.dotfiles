@@ -18,13 +18,6 @@
 
       vim-nix
 
-      {
-        plugin = pkgs.vimUtils.buildVimPlugin {
-         name = "onedark";
-         src = inputs.plugin-onedark;
-        };
-        config = "colorscheme onedark";
-      }
     ];
   };
 
