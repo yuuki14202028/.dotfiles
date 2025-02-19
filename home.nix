@@ -5,6 +5,9 @@
     ./browser.nix
     ./jetbrains.nix
     ./vim.nix
+    ./git.nix
+    ./zsh.nix
+    ./starship.nix
   ];
 
   home = rec {
@@ -12,6 +15,15 @@
     homeDirectory = "/home/${username}";
     stateVersion = "22.11";
   };
+
+  home.packages = with pkgs; [
+    bat
+    bottom
+    eza
+    httpie
+    pingu
+    ripgrep
+  ];
 
   programs.home-manager.enable = true;
 }

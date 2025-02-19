@@ -39,6 +39,7 @@
   };
   ides = with pkgs.jetbrains; [
     webstorm
+    rust-rover
   ];
 in {
   home.packages = with pkgs; [

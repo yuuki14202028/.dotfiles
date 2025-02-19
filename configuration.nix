@@ -133,6 +133,7 @@
 
     nodejs
 
+    bat
     eza
     fd
     gat
@@ -206,17 +207,8 @@
       };
     };
 
-    git = {
-      enable = true;
-    };
-
-    starship = {
-      enable = true;
-    };
-
     zsh = {
       enable = true;
-      syntaxHighlighting.enable = true;
     };
 
     steam = {
