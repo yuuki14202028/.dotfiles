@@ -130,6 +130,7 @@
     pinentry-qt
 
     gnumake
+    gcc
 
     nodejs
 
