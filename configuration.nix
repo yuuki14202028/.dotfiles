@@ -157,6 +157,8 @@
 
     openssl
 
+    gh
+
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
