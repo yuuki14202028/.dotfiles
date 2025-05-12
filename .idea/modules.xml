@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/.dotfiles.iml" filepath="$PROJECT_DIR$/.idea/.dotfiles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.direnv/flake-inputs/zgzjib5vbxl9l2ridhjfvs1ll6lil8s6-source/pkgs/development/development.iml" filepath="$PROJECT_DIR$/.direnv/flake-inputs/zgzjib5vbxl9l2ridhjfvs1ll6lil8s6-source/pkgs/development/development.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.direnv/flake-inputs/97hxap05brgklr57xh7qaab6s833rfg0-source/pkgs/development/development2.iml" filepath="$PROJECT_DIR$/.direnv/flake-inputs/97hxap05brgklr57xh7qaab6s833rfg0-source/pkgs/development/development2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.direnv/flake-inputs/zgzjib5vbxl9l2ridhjfvs1ll6lil8s6-source/nixos/nixos.iml" filepath="$PROJECT_DIR$/.direnv/flake-inputs/zgzjib5vbxl9l2ridhjfvs1ll6lil8s6-source/nixos/nixos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.direnv/flake-inputs/97hxap05brgklr57xh7qaab6s833rfg0-source/nixos/nixos2.iml" filepath="$PROJECT_DIR$/.direnv/flake-inputs/97hxap05brgklr57xh7qaab6s833rfg0-source/nixos/nixos2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.direnv/flake-inputs/97hxap05brgklr57xh7qaab6s833rfg0-source/pkgs/pkgs-lib/pkgs-lib.iml" filepath="$PROJECT_DIR$/.direnv/flake-inputs/97hxap05brgklr57xh7qaab6s833rfg0-source/pkgs/pkgs-lib/pkgs-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.direnv/flake-inputs/zgzjib5vbxl9l2ridhjfvs1ll6lil8s6-source/pkgs/pkgs-lib/pkgs-lib2.iml" filepath="$PROJECT_DIR$/.direnv/flake-inputs/zgzjib5vbxl9l2ridhjfvs1ll6lil8s6-source/pkgs/pkgs-lib/pkgs-lib2.iml" />
+    </modules>
+  </component>
+</project>

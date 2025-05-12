@@ -21,7 +21,6 @@
     bottom
     eza
     httpie
-    pingu
     ripgrep
   ];
 
