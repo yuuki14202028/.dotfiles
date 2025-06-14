@@ -159,6 +159,8 @@
 
     gh
 
+    claude-code
+
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).

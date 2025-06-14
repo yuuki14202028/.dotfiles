@@ -1,12 +1,6 @@
 
 {pkgs, ...}: let
-  plugins = [
-    "ideavim"
-    "nixidea"
-    "csv-editor"
-    "acejump"
-  ];
-  patched-idea = with pkgs; (jetbrains.plugins.addPlugins jetbrains.idea-ultimate plugins);
+  patched-idea = pkgs.jetbrains.idea-ultimate;
   requiredLibPath = with pkgs; lib.makeLibraryPath [
     libGL
     udev
@@ -37,12 +31,10 @@
       --prefix LD_LIBRARY_PATH : ${requiredLibPath}
     '';
   };
-  ides = with pkgs.jetbrains; [
-    webstorm
-    rust-rover
-  ];
 in {
   home.packages = with pkgs; [
     android-studio
-  ] ++ (map (ide: (jetbrains.plugins.addPlugins ide plugins)) ides) ++ [idea];
+    jetbrains.webstorm
+    jetbrains.rust-rover
+  ] ++ [idea];
 }
