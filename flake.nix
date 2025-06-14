@@ -13,9 +13,16 @@
     plugin-onedark.flake = false;
   };
 
-  outputs = inputs@{nixpkgs, home-manager, flake-utils, nix-ld, ...}: {
+  outputs = inputs@{nixpkgs, home-manager, flake-utils, nix-ld, ...}: 
+  let
+    # 共通変数の定義
+    username = "yuuki";
+    hostname = "myNixOS";
+    locale = "ja_JP.UTF-8";
+    timezone = "Asia/Tokyo";
+  in {
     nixosConfigurations = {
-      myNixOS = inputs.nixpkgs.lib.nixosSystem {
+      ${hostname} = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
@@ -23,16 +30,16 @@
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.yuuki = import ./home.nix;
+	    home-manager.users.${username} = import ./home.nix;
             home-manager.backupFileExtension = "bu";
             home-manager.extraSpecialArgs = {
-              inherit inputs;
+              inherit inputs username locale timezone;
             };
 	  }
 	  nix-ld.nixosModules.nix-ld
         ];
 	specialArgs = {
-	  inherit inputs;
+	  inherit inputs username locale timezone;
 	};
       };
     };
@@ -58,7 +65,7 @@
           fortune
         '';
 	packages = [
-	  (pkgs.writeScriptBin "nrs" "sudo nixos-rebuild switch --flake .#myNixOS")	
+	  (pkgs.writeScriptBin "nrs" "sudo nixos-rebuild switch --flake .#${hostname}")	  
 	];
       };
     });

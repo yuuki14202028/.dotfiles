@@ -2,10 +2,11 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, lib, ... }: {
+{ inputs, config, pkgs, lib, username, locale, timezone, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./locale.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -59,23 +60,6 @@
    allowedUDPPorts = [config.services.tailscale.port];
   };
 
-  # Set your time zone.
-  time.timeZone = "Asia/Tokyo";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "ja_JP.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "ja_JP.UTF-8";
-    LC_IDENTIFICATION = "ja_JP.UTF-8";
-    LC_MEASUREMENT = "ja_JP.UTF-8";
-    LC_MONETARY = "ja_JP.UTF-8";
-    LC_NAME = "ja_JP.UTF-8";
-    LC_NUMERIC = "ja_JP.UTF-8";
-    LC_PAPER = "ja_JP.UTF-8";
-    LC_TELEPHONE = "ja_JP.UTF-8";
-    LC_TIME = "ja_JP.UTF-8";
-  };
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
@@ -85,24 +69,16 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  # Configure keymap in X11
   services.xserver = {
-    xkb = {
-      layout = "jp";
-      variant = "";
-    };
     videoDrivers = ["nvidia"];
   };
-
-  # Configure console keymap
-  console.keyMap = "jp106";
   console.earlySetup = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -134,12 +110,9 @@
 
     nodejs
 
-    bat
-    eza
     fd
     gat
     genact
-    ripgrep
 
     solaar
 
@@ -167,13 +140,12 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.yuuki = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "yuuki";
+    description = username;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
     ];
     shell = pkgs.zsh;
   };

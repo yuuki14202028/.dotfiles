@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ...} :{
+{ config, pkgs, inputs, username, ...} :{
 
   imports = [
     ./apps.nix
@@ -11,7 +11,7 @@
   ];
 
   home = rec {
-    username="yuuki";
+    inherit username;
     homeDirectory = "/home/${username}";
     stateVersion = "22.11";
   };

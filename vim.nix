@@ -1,9 +1,7 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
-
-  programs.neovim = let in {
-
+  programs.neovim = {
     enable = true;
 
     viAlias = true;
@@ -15,11 +13,7 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
-
       vim-nix
-
     ];
   };
-
-  programs.home-manager.enable = true;
 }
