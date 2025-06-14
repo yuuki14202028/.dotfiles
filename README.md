@@ -86,6 +86,7 @@ home-manager switch --flake .
 cat → bat        # シンタックスハイライト付きcat
 ls → eza         # モダンなls代替
 grep → rg        # 高速なgrep代替
+ccusage → npx ccusage@latest  # Claude Code使用料金確認
 ```
 
 ## 注意事項
