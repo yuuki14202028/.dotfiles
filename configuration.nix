@@ -134,6 +134,12 @@
 
     claude-code
 
+    p7zip
+
+    fuse
+
+    uv
+
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -174,6 +180,8 @@
 	flite
 	libpulseaudio
 	alsa-lib
+        fuse
+	fuse3
       ];
     };
 
